@@ -1,7 +1,6 @@
 import babel from 'rollup-plugin-babel';
 import babelrc from 'babelrc-rollup';
 import uglify from 'rollup-plugin-uglify';
-import scss from 'rollup-plugin-scss';
 import { minify } from 'uglify-es';
 
 
@@ -9,10 +8,7 @@ let pkg = require('./package.json');
 let external = Object.keys(pkg.dependencies);
 const isProd = process.env.BUILD === 'production';
 let plugins = [
-    babel(babelrc()),
-    scss({
-        output: true,
-    })
+    babel(babelrc())
 ];
 
 if (!isProd) {
@@ -29,7 +25,7 @@ export default {
         {
             dest: pkg.main,
             format: 'iife',
-            moduleName: 'tableFits',
+            moduleName: 'TableFits',
             sourceMap: !isProd
         }
     ]

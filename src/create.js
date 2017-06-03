@@ -159,6 +159,7 @@ export default class TableFits_Create {
      */
     _createRowData(block_body, row) {
         let i = 0;
+
         Object.keys(this._thead)
             .forEach((index) => {
 
@@ -220,8 +221,8 @@ export default class TableFits_Create {
                     let td = document.createElement('div');
                     td.classList.add(this._mainClass + '__td');
 
-                    row[i].childNodes.forEach((node) => {
-                        td.appendChild(node);
+                    row[i].childNodes.forEach((nd) => {
+                        td.appendChild(nd);
                     });
                     row[i].newParent = td;
 
