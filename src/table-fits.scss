@@ -1,0 +1,51 @@
+.table-fits {
+
+    &__tr {
+        background: #fff;
+        border:1px solid #999;
+    }
+
+    &__tr + &__tr {
+        margin-top: 20px;
+    }
+
+    &__item + &__item {
+        margin-top: 10px;
+    }
+
+    &__th {
+        font-size: 0.9em;
+        color: rgba(0,0,0,.7);
+        font-style: italic;
+    }
+
+    &__body {
+        padding: 10px 20px;
+    }
+
+    &__head {
+        padding: 10px 20px;
+        background: #eee;
+        display: flex;
+
+        &__item + &__item {
+            margin-left: 20px;
+        }
+    }
+
+    &__columns {
+        display: flex;
+
+        &_title {
+            font-size: 0.9em;
+            color: rgba(0,0,0,.7);
+            font-style: italic;
+            padding-bottom: 5px;
+        }
+
+        &__col {
+            border-top:1px solid #999;
+            padding: 5px 10px;
+        }
+    }
+}

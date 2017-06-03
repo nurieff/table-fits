@@ -1,0 +1,35 @@
+.table-fits__tr {
+  background: #fff;
+  border: 1px solid #999; }
+
+.table-fits__tr + .table-fits__tr {
+  margin-top: 20px; }
+
+.table-fits__item + .table-fits__item {
+  margin-top: 10px; }
+
+.table-fits__th {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.7);
+  font-style: italic; }
+
+.table-fits__body {
+  padding: 10px 20px; }
+
+.table-fits__head {
+  padding: 10px 20px;
+  background: #eee;
+  display: flex; }
+  .table-fits__head__item + .table-fits__head__item {
+    margin-left: 20px; }
+
+.table-fits__columns {
+  display: flex; }
+  .table-fits__columns_title {
+    font-size: 0.9em;
+    color: rgba(0, 0, 0, 0.7);
+    font-style: italic;
+    padding-bottom: 5px; }
+  .table-fits__columns__col {
+    border-top: 1px solid #999;
+    padding: 5px 10px; }
