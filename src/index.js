@@ -9,10 +9,11 @@ export default class TableFits {
     }
 
     /**
-     * Также работают датасеты
-     * data-table-fits-group="Тестхуест" для TH -- Ручное объединение колонок
-     * data-table-fits="no" для TABLE -- Не использовать скрипт
-     * data-table-fits="title" для TH -- Для заголовка, можно у нескольних проставлять
+     * data-option
+     * data-table-fits-group="My group" (thead > tr > td) -- combine columns
+     * data-table-fits="no" (table) -- Skip
+     * data-table-fits="title" (thead > tr > td) -- For block's headers
+     * // TODO data-table-fits-width (table) -- Handing change to responsive
      *
      * @param el_table
      * @param config
@@ -30,6 +31,13 @@ export default class TableFits {
          * @private
          */
         this._el = typeof el_table === 'string' ? document.querySelector(el_table) : el_table;
+
+        /**
+         * @type {Node|HTMLDivElement}
+         * @private
+         */
+        this._parent = this._el.parentNode;
+        this._parentCS = getComputedStyle(this._parent);
 
         if (!this._el || !this._el.querySelector('thead')) {
             return;
@@ -145,21 +153,16 @@ export default class TableFits {
         this._el._tableFits = null;
     }
 
-    _returnChildrenToTable() {
+    _returnChildrenTo(t)
+    {
         this._rows.forEach((row) => {
             row.forEach((item) => {
                 item.childNodes.forEach((el) => {
-                    item.parent.appendChild(el);
-                })
-            })
-        });
-    }
-
-    _returnChildrenToMobileBlock() {
-        this._rows.forEach((row) => {
-            row.forEach((item) => {
-                item.childNodes.forEach((el) => {
-                    item.newParent.appendChild(el);
+                    if (t === 'table') {
+                        item.parent.appendChild(el);
+                    } else {
+                        item.newParent.appendChild(el);
+                    }
                 })
             })
         });
@@ -170,23 +173,22 @@ export default class TableFits {
 
         this._isTableFits = false;
 
-        this._returnChildrenToTable();
+        this._returnChildrenTo('table');
 
         this._el.style.display = 'table';
         this._tableFitsEl.parentNode.removeChild(this._tableFitsEl);
     }
 
     _isNeedTableFits() {
+        let parentW =
+            this._parent.clientWidth -
+            parseFloat(this._parentCS.getPropertyValue('padding-left')) -
+            parseFloat(this._parentCS.getPropertyValue('padding-right'))
+        ;
 
-        if (this._elMinWidth) {
-            if (this._el.parentNode.offsetWidth >= this._elMinWidth) {
-                return false;
-            }
-        } else if (this._el.parentNode.offsetWidth >= this._el.offsetWidth) {
-            return false;
-        }
+        let tableW = this._elMinWidth ? this._elMinWidth : this._el.offsetWidth;
 
-        return true;
+        return parentW < tableW;
     }
 
     _init() {
@@ -206,7 +208,7 @@ export default class TableFits {
             this._prepareTableFits();
             this._createTableFits();
         } else {
-            this._returnChildrenToMobileBlock();
+            this._returnChildrenTo('mobile-block');
         }
 
         this._el.style.display = 'none';

@@ -5,7 +5,7 @@
   "main": "dist/table-fits.js",
   "scripts": {
     "build": "rollup -c --environment BUILD:production",
-    "watch": "rollup -c -w",
+    "watch": "rollup -c --watch",
     "style": "gulp",
     "dev": "rollup -c"
   },

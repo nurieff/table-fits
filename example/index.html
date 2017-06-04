@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Fits</title>
+    <link rel="stylesheet" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../dist/table-fits.css">
+    <script src="../dist/table-fits.js"></script>
+    <style>
+        body {
+            background: #f5f5f5;
+        }
+
+        .b {
+            background: #fff;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="b">
+            <div class="row">
+                <div class="col-md-8">
+                    <table class="table" id="t">
+                        <thead>
+                        <tr>
+                            <th>Surname</th>
+                            <th>Name</th>
+                            <th>Patronymic</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Ivanov</td>
+                            <td>Konstantin</td>
+                            <td>Konstantinovich</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        TableFits.make('#t');
+    </script>
+</body>
+</html>

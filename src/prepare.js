@@ -37,10 +37,6 @@ export default class TableFits_Prepare {
             [].forEach.call(el.querySelectorAll('th'), this._prepareTH.bind(this))
         });
 
-        if (this.mainTitleIndex.length === 0) {
-            this.mainTitleIndex = [0];
-        }
-
         this._prepareRows();
     }
 

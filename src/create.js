@@ -83,7 +83,9 @@ export default class TableFits_Create {
                 });
             }
 
-            tr.appendChild(this._createMainTitle(row));
+            if (this._mainTitleIndex.length) {
+                tr.appendChild(this._createMainTitle(row));
+            }
 
             /**
              * Тело
