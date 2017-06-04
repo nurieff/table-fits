@@ -2,24 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Table Fits</title>
+    <title>Table Fits | Responsive table into a responsive site. Or adaptive?</title>
     <link rel="stylesheet" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../dist/table-fits.css">
-    <script src="../dist/table-fits.js"></script>
+    <link rel="stylesheet" href="css/table-fits.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/table-fits.js"></script>
     <style>
-        body {
-            background: #f5f5f5;
-        }
 
-        .b {
-            background: #fff;
-            padding: 10px;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
+
+        <h1>TableFits</h1>
+        <p class="lead">
+            Responsive table into a responsive site. Or adaptive?
+            <br/>
+            Easy.
+            <br/>
+            Support colspan
+        </p>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>How to use</h2>
+                <h4>1. Install</h4>
+                <p>
+                    <code>
+                        npm install table-fits
+                    </code>
+                </p>
+                <br/>
+                <h4>2. Insert script (and styles)</h4>
+                <pre>
+&lt;script src="js/table-fits.js"&gt;&lt;/script&gt;
+// Create own style or take ours — for test
+&lt;link rel="stylesheet" href="css/table-fits.css"&gt;
+</pre>
+                <br/>
+                <h4>3. Your table</h4>
+                <pre>
+&lt;table id="id-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Title 1&lt;/td&gt;
+            &lt;td&gt;Title 2&lt;/td&gt;
+            ...
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Value 1&lt;/td&gt;
+            &lt;td&gt;Value 2&lt;/td&gt;
+            ...
+        &lt;/tr&gt;
+        ...
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+                <br/>
+                <h4>4. Magic</h4>
+                <pre>
+TableFits.make('#id-table');
+</pre>
+                <br/>
+                <h4>5. Now, you have the responsive table</h4>
+            </div>
+            <div class="col-md-4">
+                <h2>Small size — 10kb</h2>
+                <h2>How it works?</h2>
+                <p>
+                    The script looks for a table and if the data in the table do not fit, the script will show them in cute look
+                </p>
+                <p>
+                    The script will keep watch, if the structure of the table has changed or added a new line. And modify data in new blocks.
+                </p>
+                <p>
+                    And callback on resize
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+
+            </div>
+        </div>
+
+
         <div class="b">
             <div class="row">
                 <div class="col-md-8">
@@ -47,5 +117,7 @@
     <script>
         TableFits.make('#t');
     </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
 </body>
 </html>
