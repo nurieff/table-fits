@@ -1,37 +1,18 @@
 {
-  "name": "table-fits",
+  "name": "table-fits-readme",
   "version": "1.0.0",
-  "description": "Responsive table",
-  "main": "dist/table-fits.js",
+  "description": "Responsive table README",
   "scripts": {
-    "build": "rollup -c --environment BUILD:production",
-    "watch": "rollup -c --watch",
-    "style": "gulp",
-    "dev": "rollup -c"
+    "build": "gulp",
+    "dev": "gulp watch"
   },
-  "keywords": [
-    "css",
-    "scss",
-    "script"
-  ],
   "repository": "https://github.com/nurieff/table-fits",
   "author": "Marat Nuriev",
   "email": "nurieff@gmail.com",
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "babel-eslint": "^7.1.1",
-    "babel-plugin-external-helpers": "^6.18.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-register": "^6.18.0",
-    "babelrc-rollup": "^3.0.0",
     "gulp": "^3.9.1",
-    "gulp-sass": "^3.1.0",
-    "rollup": "^0.42.0",
-    "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-istanbul": "^1.1.0",
-    "rollup-plugin-uglify": "^2.0.1",
-    "rollup-watch": "^3.2.2",
-    "uglify-es": "^3.0.15"
+    "gulp-sass": "^3.1.0"
   }
 }
