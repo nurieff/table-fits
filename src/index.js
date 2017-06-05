@@ -13,7 +13,7 @@ export default class TableFits {
      * data-table-fits-group="My group" (thead > tr > td) -- combine columns
      * data-table-fits="no" (table) -- Skip
      * data-table-fits="title" (thead > tr > td) -- For block's headers
-     * // TODO data-table-fits-width (table) -- Handing change to responsive
+     * TODO data-table-fits-width (table) -- Handing change to responsive
      *
      * @param el_table
      * @param config
