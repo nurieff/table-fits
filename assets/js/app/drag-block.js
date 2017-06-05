@@ -69,10 +69,12 @@ export default class App_DragBlock {
 
         let x1 = e.pageX;
 
+        document.body.classList.add('noselect');
         document.body.onmousemove = (e) => {
             let w = width - (x1 - e.pageX);
 
             if (w < 0.1 * this._maxWidth) w = Math.round(this._maxWidth * 0.1);
+
             if (w > this._maxWidth) w = this._maxWidth;
 
             this._el.style.width = w + 'px';
@@ -83,6 +85,7 @@ export default class App_DragBlock {
         };
 
         document.body.onmouseup = () => {
+            document.body.classList.remove('noselect');
             document.body.onmouseup = document.body.onmousemove = null;
         };
     }

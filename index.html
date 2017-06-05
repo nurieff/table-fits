@@ -11,36 +11,36 @@
 </head>
 <body>
 
-    <div class="container">
+<div class="container">
 
-        <h1>TableFits</h1>
-        <p class="lead">
-            Responsive table into a responsive site. Or adaptive?
-            <br/>
-            Easy.
-            <br/>
-            Support colspan
-        </p>
+    <h1>TableFits</h1>
+    <p class="lead">
+        Responsive table into a responsive site. Or adaptive?
+        <br/>
+        Easy.
+        <br/>
+        Support colspan
+    </p>
 
-        <div class="row">
-            <div class="col-md-8">
-                <h2>How to use</h2>
-                <h4>1. Install</h4>
-                <p>
-                    <code>
-                        npm install table-fits
-                    </code>
-                </p>
-                <br/>
-                <h4>2. Insert script (and styles)</h4>
-                <pre>
+    <div class="row">
+        <div class="col-md-8">
+            <h2>How to use</h2>
+            <h4>1. Install</h4>
+            <p>
+                <code>
+                    npm install table-fits
+                </code>
+            </p>
+            <br/>
+            <h4>2. Insert script (and styles)</h4>
+            <pre>
 &lt;script src="js/table-fits.js"&gt;&lt;/script&gt;
 // Create own style or take ours — for test
 &lt;link rel="stylesheet" href="css/table-fits.css"&gt;
 </pre>
-                <br/>
-                <h4>3. Your table</h4>
-                <pre>
+            <br/>
+            <h4>3. Your table</h4>
+            <pre>
 &lt;table id="id-table"&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -59,65 +59,97 @@
     &lt;/tbody&gt;
 &lt;/table&gt;
 </pre>
-                <br/>
-                <h4>4. Magic</h4>
-                <pre>
+            <br/>
+            <h4>4. Magic</h4>
+            <pre>
 TableFits.make('#id-table');
 </pre>
-                <br/>
-                <h4>5. Now, you have the responsive table</h4>
-            </div>
-            <div class="col-md-4 noselect">
-                <h2>Small size — 10kb</h2>
-                <h2>How it works?</h2>
-                <p>
-                    The script looks for a table and if the data in the table do not fit, the script will show them in cute look
-                </p>
-                <p>
-                    The script will keep watch, if the structure of the table has changed or added a new line. And modify data in new blocks.
-                </p>
-                <p>
-                    And callback on resize
-                </p>
-            </div>
+            <br/>
+            <h4>5. Now, you have the responsive table</h4>
         </div>
-        <div class="row">
-            <div class="col-md-6">
-
-            </div>
+        <div class="col-md-4">
+            <h2>Small size — 10kb</h2>
+            <h2>How it works?</h2>
+            <p>
+                The script looks for a table and if the data in the table do not fit, the script will show them in cute
+                look
+            </p>
+            <p>
+                The script will keep watch, if the structure of the table has changed or added a new line. And modify
+                data in new blocks.
+            </p>
+            <p>
+                And callback on resize
+            </p>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
 
-        <div class="b-padding-top-50">
-            <div id="b" class="noselect">
-                <table class="table" id="t">
-                    <thead>
-                    <tr>
-                        <th>Surname</th>
-                        <th>Name</th>
-                        <th>Patronymic</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>Ivanov</td>
-                        <td>Konstantin</td>
-                        <td>Konstantinovich</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
         </div>
     </div>
 
-    <script>
-        var TF1 = TableFits.make('#t');
-        App.DragBlock.make('#b',{
-            callback: function() {
-                TF1.onResize();
-            }
-        });
-    </script>
+    <div class="b-padding-top-50">
+        <div id="b">
+            <table class="table" id="t">
+                <thead>
+                <tr>
+                    <th>Surname</th>
+                    <th>Name</th>
+                    <th>Patronymic</th>
+                    <th>Year</th>
+                    <th>Car</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Konstantinov</td>
+                    <td>Konstantin</td>
+                    <td>Konstantinovich</td>
+                    <td>1987</td>
+                    <td>Lada Granta</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" onclick="removeTr(this)">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Ivanov</td>
+                    <td>Ivan</td>
+                    <td>Ivanovich</td>
+                    <td>1977</td>
+                    <td>Lada 99</td>
+                    <td>
+                        <button type="button" class="btn btn-warning btn-sm" onclick="removeTr(this)">
+                            <i class="glyphicon glyphicon-trash"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
-    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+<script>
+    function removeTr(el) {
+        while (el = el.parentElement) {
+            if (el.tagName === 'TR') {
+                el.parentNode.removeChild(el);
+            }
+        }
+    }
+
+    var TF1 = TableFits.make('#t');
+    App.DragBlock.make('#b', {
+        callback: function() {
+            TF1.onResize();
+        }
+    });
+</script>
+
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
 </body>
 </html>
