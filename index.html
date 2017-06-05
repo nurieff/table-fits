@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="css/table-fits.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/table-fits.js"></script>
-    <style>
-
-    </style>
+    <script src="js/app.js"></script>
 </head>
 <body>
 
@@ -69,7 +67,7 @@ TableFits.make('#id-table');
                 <br/>
                 <h4>5. Now, you have the responsive table</h4>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 noselect">
                 <h2>Small size — 10kb</h2>
                 <h2>How it works?</h2>
                 <p>
@@ -89,36 +87,35 @@ TableFits.make('#id-table');
             </div>
         </div>
 
-        <div>
-
-        </div>
-
-        <div class="b">
-            <div class="row">
-                <div class="col-md-8">
-                    <table class="table" id="t">
-                        <thead>
-                        <tr>
-                            <th>Surname</th>
-                            <th>Name</th>
-                            <th>Patronymic</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Ivanov</td>
-                            <td>Konstantin</td>
-                            <td>Konstantinovich</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
+        <div class="b-padding-top-50">
+            <div id="b" class="noselect">
+                <table class="table" id="t">
+                    <thead>
+                    <tr>
+                        <th>Surname</th>
+                        <th>Name</th>
+                        <th>Patronymic</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Ivanov</td>
+                        <td>Konstantin</td>
+                        <td>Konstantinovich</td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
 
     <script>
-        TableFits.make('#t');
+        var TF1 = TableFits.make('#t');
+        App.DragBlock.make('#b',{
+            callback: function() {
+                TF1.onResize();
+            }
+        });
     </script>
 
     <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">

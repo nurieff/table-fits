@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Responsive table README",
   "scripts": {
-    "build": "gulp",
-    "dev": "gulp watch"
+    "build": "BUILD=production gulp",
+    "watch": "gulp watch",
+    "dev": "gulp -c"
   },
   "repository": "https://github.com/nurieff/table-fits",
   "author": "Marat Nuriev",
@@ -14,6 +15,12 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-sass": "^3.1.0",
-    "rollup": "^0.42.0"
+    "rollup": "^0.42.0",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-stream": "^1.19.0",
+    "rollup-watch": "^3.2.2",
+    "uglify-es": "^3.0.15",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

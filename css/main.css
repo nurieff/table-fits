@@ -1,2 +1,50 @@
+@charset "UTF-8";
 body {
   font-family: 'Inconsolata', monospace; }
+
+.drag-block {
+  position: absolute;
+  top: 0;
+  right: -1px;
+  width: 1px;
+  background: #111;
+  height: 100%; }
+  .drag-block__hand {
+    cursor: pointer;
+    position: absolute;
+    top: -20px;
+    right: 0;
+    margin-right: -10px;
+    width: 20px;
+    background: #111;
+    height: 20px;
+    border-radius: 50%; }
+    .drag-block__hand::before, .drag-block__hand::after {
+      content: '→';
+      position: absolute;
+      top: 50%;
+      right: -15px;
+      line-height: 0;
+      font-size: 20px; }
+    .drag-block__hand::before {
+      right: auto;
+      left: -15px;
+      content: '←'; }
+
+.b-padding-top-50 {
+  padding-top: 50px; }
+
+.noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
