@@ -50,7 +50,7 @@ The script will keep watch, if the structure of the table has changed or added a
 
 And callback on resize
 
-### Any options
+### Some options
 
 ```javascript
 TableFits.make('#id-table',{
@@ -69,6 +69,9 @@ Option | Description
 ### Inline options
 
 #### Skip the table `data-table-fits="no"`
+
+If you give the script all tables in a row, this option will be useful
+
 ```html
 <table id="id-table" data-table-fits="no">
 ...
