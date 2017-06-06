@@ -14,38 +14,110 @@
         .b {
             background: #fff;
             padding: 10px;
+            margin-bottom: 30px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="b">
-            <div class="row">
-                <div class="col-md-8">
-                    <table class="table" id="t">
-                        <thead>
-                        <tr>
-                            <th>Surname</th>
-                            <th>Name</th>
-                            <th>Patronymic</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Ivanov</td>
-                            <td>Konstantin</td>
-                            <td>Konstantinovich</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
+<div class="container">
+    <div class="b">
+        <table class="table" id="t1">
+            <thead>
+            <tr>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Patronymic</th>
+                <th>Year</th>
+                <th>Car</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Konstantinov</td>
+                <td>Konstantin</td>
+                <td>Konstantinovich</td>
+                <td>1987</td>
+                <td>Lada Granta</td>
+                <td>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Ivanov</td>
+                <td>Ivan</td>
+                <td>Ivanovich</td>
+                <td>1977</td>
+                <td>Lada 99</td>
+                <td>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Sidorov</td>
+                <td>Alexey</td>
+                <td>Aleksandrovich</td>
+                <td>1967</td>
+                <td>UAZ Patriot</td>
+                <td>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
+    <div class="b">
+        <table class="table" id="t2">
+            <thead>
+            <tr>
+                <th data-table-fits="title">Surname</th>
+                <th data-table-fits="title">Name</th>
+                <th>Patronymic</th>
+                <th>Year</th>
+                <th>Car</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Konstantinov</td>
+                <td>Konstantin</td>
+                <td>Konstantinovich</td>
+                <td>1987</td>
+                <td>Lada Granta</td>
+                <td>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Ivanov</td>
+                <td>Ivan</td>
+                <td>Ivanovich</td>
+                <td>1977</td>
+                <td>Lada 99</td>
+                <td>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                </td>
+            </tr>
+            <tr>
+                <td>Sidorov</td>
+                <td>Alexey</td>
+                <td>Aleksandrovich</td>
+                <td>1967</td>
+                <td>UAZ Patriot</td>
+                <td>
+                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-    <script>
-        TableFits.make('#t');
-    </script>
+<script>
+    TableFits.make('#t1');
+    TableFits.make('#t2');
+</script>
 </body>
 </html>

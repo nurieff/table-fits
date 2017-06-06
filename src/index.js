@@ -99,6 +99,7 @@ export default class TableFits {
         this._reloadHadler = this.onReload.bind(this);
 
         this._init();
+
         this._initEvent();
     }
 
@@ -107,7 +108,7 @@ export default class TableFits {
             window.addEventListener('resize', this._initHadler, true);
         }
 
-        if (this._config.watch) {
+        if (this._config.watch && this._isTableFits) {
             DomChange.addEvent(this._el, this._reloadHadler);
         }
     }
