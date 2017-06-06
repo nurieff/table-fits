@@ -83,15 +83,10 @@ TableFits.make('#id-table');
             </p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-6">
 
-        </div>
-    </div>
-
-    <div class="b-padding-top-50">
-        <div id="b">
-            <table class="table" id="t">
+    <div>
+        <div id="b1">
+            <table class="table" id="t1">
                 <thead>
                 <tr>
                     <th>Surname</th>
@@ -109,11 +104,7 @@ TableFits.make('#id-table');
                     <td>Konstantinovich</td>
                     <td>1987</td>
                     <td>Lada Granta</td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-sm" onclick="removeTr(this)">
-                            <i class="glyphicon glyphicon-trash"></i>
-                        </button>
-                    </td>
+                    <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
                 </tr>
                 <tr>
                     <td>Ivanov</td>
@@ -121,33 +112,184 @@ TableFits.make('#id-table');
                     <td>Ivanovich</td>
                     <td>1977</td>
                     <td>Lada 99</td>
-                    <td>
-                        <button type="button" class="btn btn-warning btn-sm" onclick="removeTr(this)">
-                            <i class="glyphicon glyphicon-trash"></i>
-                        </button>
-                    </td>
+                    <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Sidorov</td>
+                    <td>Alexey</td>
+                    <td>Aleksandrovich</td>
+                    <td>1967</td>
+                    <td>UAZ Patriot</td>
+                    <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
                 </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <h2>Some options</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <pre>
+TableFits.make('#id-table',{
+    mainClass: 'table-fits',
+    resize: true,
+    watch: true
+})
+</pre>
+        </div>
+        <div class="col-md-8">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Option</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <code>mainClass</code>
+                        </td>
+                        <td>
+                            Class name prefix, default: <code>"table-fits"</code> and all children has class <code>"table-fits__..."</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>resize</code>
+                        </td>
+                        <td>
+                            It's enable resize. If width of window (or parent container) will change, the event is triggered. Default <code>true</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>watch</code>
+                        </td>
+                        <td>
+                            It's enable watch. If the structure of the table has changed or added a new line, the event is triggered. Default <code>true</code>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <h2>Inline options</h2>
+
+    <h3>Skip table</h3>
+    <div class="row">
+        <div class="col-md-6">
+<pre>
+&lt;table id="id-table" data-table-fits="no"&gt;
+    ...
+&lt;/table&gt;
+</pre>
+        </div>
+        <div class="col-md-6">
+            <h4>
+                <code>data-table-fits="no"</code>
+            </h4>
+            <p>
+                If you give the script all tables in a row, this option will be useful
+            </p>
+        </div>
+    </div>
+
+    <h3>Title of block</h3>
+    <div class="row">
+        <div class="col-md-6">
+<pre>
+&lt;table id="id-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td data-table-fits="title"&gt;Title 1&lt;/td&gt;
+            &lt;td data-table-fits="title"&gt;Title 2&lt;/td&gt;
+            &lt;td&gt;Title 3&lt;/td&gt;
+            ...
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        ...
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+        </div>
+        <div class="col-md-6">
+            <h4>
+                <code>data-table-fits="title"</code>
+            </h4>
+            <p>
+                The block is tag <code>&lt;tr&gt;</code> like <code>&lt;div&gt;</code>, and this block may have headings (titles).
+                You need to add <code>data-table-fits="title"</code> in the right column in the tag <code>&lt;td&gt;</code> in the <code>&lt;thead&gt;</code>
+
+                P.S. Supports multiple headers
+            </p>
+        </div>
+
+    </div>
+    <div>
+        <h4>Example</h4>
+        <div id="b2">
+            <table class="table" id="t2">
+                <thead>
+                <tr>
+                    <th data-table-fits="title">Surname</th>
+                    <th data-table-fits="title">Name</th>
+                    <th>Patronymic</th>
+                    <th>Year</th>
+                    <th>Car</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Konstantinov</td>
+                    <td>Konstantin</td>
+                    <td>Konstantinovich</td>
+                    <td>1987</td>
+                    <td>Lada Granta</td>
+                    <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Ivanov</td>
+                    <td>Ivan</td>
+                    <td>Ivanovich</td>
+                    <td>1977</td>
+                    <td>Lada 99</td>
+                    <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Sidorov</td>
+                    <td>Alexey</td>
+                    <td>Aleksandrovich</td>
+                    <td>1967</td>
+                    <td>UAZ Patriot</td>
+                    <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
 </div>
 
 <script>
-    function removeTr(el) {
-        while (el = el.parentElement) {
-            if (el.tagName === 'TR') {
-                el.parentNode.removeChild(el);
-            }
-        }
-    }
+    var TF1 = TableFits.make('#t1');
+    //var TF2 = TableFits.make('#t2');
 
-    var TF1 = TableFits.make('#t');
-    App.DragBlock.make('#b', {
+    App.DragBlock.make('#b1', {
         callback: function() {
             TF1.onResize();
         }
     });
+
+//    App.DragBlock.make('#b2', {
+//        callback: function() {
+//            TF2.onResize();
+//        }
+//    });
 </script>
 
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
