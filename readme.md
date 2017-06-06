@@ -1,5 +1,7 @@
 # TableFits
 
+[Full doc | Example | Demo](http://nurieff.github.io/table-fits)
+
 Responsive table into a responsive site. Or adaptive?
 
 Easy
