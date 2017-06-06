@@ -99,7 +99,6 @@ export default class TableFits {
         this._reloadHadler = this.onReload.bind(this);
 
         this._init();
-
         this._initEvent();
     }
 

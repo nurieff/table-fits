@@ -34,7 +34,7 @@ export default class TableFits_Prepare {
         let thead_trs = this._table.querySelectorAll('thead tr');
         [].forEach.call(thead_trs, (el) => {
             this._nextGroupIndex = 0;
-            [].forEach.call(el.querySelectorAll('th'), this._prepareTH.bind(this))
+            [].forEach.call(el.querySelectorAll('th'), this._prepareTH.bind(this));
         });
 
         this._prepareRows();
@@ -87,7 +87,7 @@ export default class TableFits_Prepare {
             this._nextGroupIndex += 1;
         }
 
-        if (this._groups[index]) {
+        if (typeof this._groups[index] !== 'undefined' && th.parentNode.rowIndex > 0) {
             // Должны быть в группе
             this.thead[this._groups[index]].columns.push(th.innerText);
 

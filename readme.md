@@ -105,4 +105,43 @@ Now, the headers that have the option, the "headers's data" will be in the top o
 
 #### Combine headers `data-table-fits-group="My group"`
 
-You can combine columns without the use `colspan` and instead use the option `data-table-fits-group="My group"`
+You can combine columns using `colspan` or use the option `data-table-fits-group="My group"`
+
+```html
+<table id="id-table">
+    <thead>
+        <tr>
+            <td data-table-fits-group="My group">Title 1</td>
+            <td data-table-fits-group="My group">Title 2</td>
+            <td>Title 3</td>
+            ...
+        </tr>
+    </thead>
+    <tbody>
+        ...
+    </tbody>
+</table>
+```
+
+or
+
+```html
+<table id="id-table">
+    <thead>
+        <tr>
+            <td colspan="2">My Group</td>
+            <td rowspan="2">Title 3</td>
+            ...
+        </tr>
+        <tr>
+            <td>Title 1</td>
+            <td>Title 2</td>
+            <td>Title 3</td>
+            ...
+        </tr>
+    </thead>
+    <tbody>
+        ...
+    </tbody>
+</table>
+```
