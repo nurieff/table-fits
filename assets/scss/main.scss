@@ -44,6 +44,22 @@ body {
   padding-top: 50px;
 }
 
+.list-links {
+  margin-top: 15px;
+  list-style: none;
+  font-size: 1.5em;
+  margin-left: 0;
+  padding-left: 0;
+
+  a {
+    text-decoration: none;
+    border-bottom:1px solid transparentize(#23527c,0.5);
+    &:hover {
+      border-bottom-color:#23527c;
+    }
+  }
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

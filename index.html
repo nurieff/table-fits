@@ -13,14 +13,24 @@
 
 <div class="container">
 
-    <h1>TableFits</h1>
-    <p class="lead">
-        Responsive table into a responsive site. Or adaptive?
-        <br/>
-        Easy.
-        <br/>
-        Support colspan
-    </p>
+    <div class="row">
+        <div class="col-md-8">
+            <h1>TableFits</h1>
+            <p class="lead">
+                Responsive table into a responsive site. Or adaptive?
+                <br/>
+                Easy.
+                <br/>
+                Support colspan
+            </p>
+        </div>
+        <div class="col-md-4">
+            <ul class="list-links">
+                <li><a href="https://github.com/nurieff/table-fits">GitHub</a></li>
+                <li><a href="">NPM</a></li>
+            </ul>
+        </div>
+    </div>
 
     <div class="row">
         <div class="col-md-8">
@@ -273,11 +283,116 @@ TableFits.make('#id-table',{
         </div>
     </div>
 
+    <h3>Combine headers</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <h4>
+                <code>data-table-fits-group="My group"</code> or <code>colspan="2..N"</code>
+            </h4>
+            <p>
+                You can combine columns using <code>colspan</code> or use the option <code>data-table-fits-group="My group"</code>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+<pre>
+&lt;table id="id-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;My Group&lt;/td&gt;
+            &lt;td rowspan="2&gt;Title 3&lt;/td&gt;
+            ...
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Title 1&lt;/td&gt;
+            &lt;td&gt;Title 2&lt;/td&gt;
+            &lt;td&gt;Title 3&lt;/td&gt;
+            ...
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        ...
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+        </div>
+        <div class="col-md-6">
+<pre>
+&lt;table id="id-table"&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;td data-table-fits-group="My Group"&gt;Title 1&lt;/td&gt;
+            &lt;td data-table-fits-group="My Group"&gt;Title 2&lt;/td&gt;
+            &lt;td&gt;Title 3&lt;/td&gt;
+            ...
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        ...
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</pre>
+        </div>
+
+    </div>
+    <div>
+    <h4>Example</h4>
+    <div id="b3">
+        <table class="table" id="t3">
+            <thead>
+            <tr>
+                <th colspan="3">Full name</th>
+                <th rowspan="2">Year</th>
+                <th rowspan="2">Car</th>
+                <th rowspan="2">Car's year</th>
+                <th rowspan="2"></th>
+            </tr>
+            <tr>
+                <th>Surname</th>
+                <th>Name</th>
+                <th>Patronymic</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Konstantinov</td>
+                <td>Konstantin</td>
+                <td>Konstantinovich</td>
+                <td>1987</td>
+                <td>Lada Granta</td>
+                <td>2015</td>
+                <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+            </tr>
+            <tr>
+                <td>Ivanov</td>
+                <td>Ivan</td>
+                <td>Ivanovich</td>
+                <td>1977</td>
+                <td>Lada 99</td>
+                <td>1997</td>
+                <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+            </tr>
+            <tr>
+                <td>Sidorov</td>
+                <td>Alexey</td>
+                <td>Aleksandrovich</td>
+                <td>1967</td>
+                <td>UAZ Patriot</td>
+                <td>2012</td>
+                <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 </div>
 
 <script>
-    var TF1 = TableFits.make('#t1');
-    //var TF2 = TableFits.make('#t2');
+    var TF1 = TableFits.make('#t1')
+        , TF2 = TableFits.make('#t2')
+        , TF3 = TableFits.make('#t3')
+    ;
 
     App.DragBlock.make('#b1', {
         callback: function() {
@@ -285,11 +400,17 @@ TableFits.make('#id-table',{
         }
     });
 
-//    App.DragBlock.make('#b2', {
-//        callback: function() {
-//            TF2.onResize();
-//        }
-//    });
+    App.DragBlock.make('#b2', {
+        callback: function() {
+            TF2.onResize();
+        }
+    });
+
+    App.DragBlock.make('#b3', {
+        callback: function() {
+            TF3.onResize();
+        }
+    });
 </script>
 
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
