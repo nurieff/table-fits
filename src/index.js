@@ -39,7 +39,6 @@ export default class TableFits {
          */
         this._parent = this._el.parentNode;
         this._parentCS = getComputedStyle(this._parent);
-        this._widthPoint = this._config.width ? this._config.width : null;
 
         if (!this._el || !this._el.querySelector('thead')) {
             return;
@@ -52,6 +51,8 @@ export default class TableFits {
         }
 
         this._config = Object.assign({}, this._config, config);
+
+        this._widthPoint = this._config.width ? this._config.width : null;
 
         if ('tableFitsWidth' in this._el.dataset) {
             this._widthPoint = parseInt(this._el.dataset.tableFitsWidth,10);
