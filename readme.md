@@ -59,6 +59,7 @@ And callback on resize
 ```javascript
 TableFits.make('#id-table',{
    mainClass: 'table-fits',
+   width: null,
    resize: true,
    watch: true
 })
@@ -67,6 +68,7 @@ TableFits.make('#id-table',{
 Option | Description
 ------ | -----------
 `mainClass`|Class name prefix, default: `table-fits` and all children has class `table-fits__...`
+`width`|Sets the width of the table when it will converted into blocks, default `null`
 `resize`|Enable resize, if width of window will change, default `true`
 `watch`|Enable watch, if the structure of the table has changed or added a new line, default `true`
 
@@ -80,6 +82,24 @@ If you give the script all tables in a row, this option will be useful
 <table id="id-table" data-table-fits="no">
 ...
 </table>
+```
+
+#### Skip the table `data-table-width="700"`
+
+Sets the width of the table when it will converted into blocks.
+
+```html
+<table id="id-table" data-table-width="700">
+...
+</table>
+```
+
+Similar to the option
+
+```javascript
+TableFits.make('#id-table',{
+   width: 700
+});
 ```
 
 #### Title of block `data-table-fits="title"`
