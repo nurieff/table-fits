@@ -3,4 +3,7 @@
 ._*
 node_modules
 npm-debug.log
+example
+gulpfile.js
+rollup.config.js
 yarn.lock
