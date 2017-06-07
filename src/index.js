@@ -13,7 +13,7 @@ export default class TableFits {
      * data-table-fits-group="My group" (thead > tr > td) -- combine columns
      * data-table-fits="no" (table) -- Skip
      * data-table-fits="title" (thead > tr > td) -- For block's headers
-     * TODO data-table-fits-width (table) -- Handing change to responsive
+     * data-table-fits-width -- Handing change to responsive
      *
      * @param el_table
      * @param config
@@ -22,6 +22,7 @@ export default class TableFits {
 
         this._config = {
             mainClass: 'table-fits',
+            width: null,
             resize: true,
             watch: true
         };
@@ -50,6 +51,12 @@ export default class TableFits {
         }
 
         this._config = Object.assign({}, this._config, config);
+
+        this._widthPoint = this._config.width ? this._config.width : null;
+
+        if ('tableFitsWidth' in this._el.dataset) {
+            this._widthPoint = parseInt(this._el.dataset.tableFitsWidth,10);
+        }
 
         if (this._el._tableFits) {
             this._el._tableFits.destroy();
@@ -124,6 +131,7 @@ export default class TableFits {
 
     onResize() {
         this._offEvent();
+
         this._init();
         this._initEvent();
     }
@@ -132,6 +140,7 @@ export default class TableFits {
         this._offEvent();
         this._showTableDefault();
         this.reset();
+
         this._init();
         this._initEvent();
     }
@@ -185,6 +194,10 @@ export default class TableFits {
             parseFloat(this._parentCS.getPropertyValue('padding-left')) -
             parseFloat(this._parentCS.getPropertyValue('padding-right'))
         ;
+
+        if (this._widthPoint) {
+            return parentW <= this._widthPoint;
+        }
 
         let tableW = this._elMinWidth ? this._elMinWidth : this._el.offsetWidth;
 
