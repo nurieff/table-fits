@@ -2,6 +2,8 @@
 
 [Full doc | Example | Demo](http://nurieff.github.io/table-fits)
 
+[npm](https://www.npmjs.com/package/table-fits)
+
 Responsive table into a responsive site. Or adaptive?
 
 Easy
@@ -147,3 +149,5 @@ or
     </tbody>
 </table>
 ```
+
+[Full doc | Example | Demo](http://nurieff.github.io/table-fits)
