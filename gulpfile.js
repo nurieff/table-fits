@@ -2,10 +2,6 @@ let rollup = require('rollup-stream');
 let source = require('vinyl-source-stream');
 let gulp = require('gulp');
 let sass = require('gulp-sass');
-//let babel = require('rollup-plugin-babel');
-//let babelrc = require('babelrc-rollup');
-//let uglify = require('rollup-plugin-uglify');
-//let minify = require('uglify-es').minify;
 
 const isProd = process.env.BUILD === 'production';
 

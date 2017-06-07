@@ -1,3 +1,5 @@
+import {ce} from './ext';
+
 export default class TableFits_Create {
 
     /**
@@ -73,8 +75,8 @@ export default class TableFits_Create {
     create() {
         this._rows.forEach((row, rowIndex) => {
 
-            let tr = document.createElement('div');
-            tr.classList.add(this._mainClass + '__tr');
+            let tr = ce('div',this._mainClass + '__tr');
+
             this._container.appendChild(tr);
 
             if (this._rowsClasses[rowIndex]) {
@@ -91,8 +93,7 @@ export default class TableFits_Create {
              * Тело
              * @type {HTMLDivElement}
              */
-            let b = document.createElement('div');
-            b.classList.add(this._mainClass + '__body');
+            let b = ce('div',this._mainClass + '__body');
             tr.appendChild(b);
 
             this._createRowData(b, row);
@@ -110,11 +111,9 @@ export default class TableFits_Create {
          * Заголовок
          * @type {HTMLDivElement} h
          */
-        let h = document.createElement('div');
-        h.classList.add(this._mainClass + '__head');
+        let h = ce('div',this._mainClass + '__head');
         this._mainTitleIndex.forEach((i) => {
-            let el = document.createElement('div');
-            el.classList.add(this._mainClass + '__head__item');
+            let el = ce('div',this._mainClass + '__head__item');
 
             let isHasForm = false;
             row[i].childNodes.forEach((node) => {
@@ -126,12 +125,10 @@ export default class TableFits_Create {
             });
 
             if (isHasForm) {
-                let th = document.createElement('div');
-                th.classList.add(this._mainClass + '__th');
+                let th = ce('div',this._mainClass + '__th');
                 th.appendChild(document.createTextNode(this._thead[i]));
 
-                let td = document.createElement('div');
-                td.classList.add(this._mainClass + '__td');
+                let td = ce('div',this._mainClass + '__td');
 
                 row[i].childNodes.forEach((node) => {
                     td.appendChild(node);
@@ -167,17 +164,15 @@ export default class TableFits_Create {
 
                 let thead_th = this._thead[index];
 
-                let item = document.createElement('div');
-                item.classList.add(this._mainClass + '__item');
+                let item = ce('div',this._mainClass + '__item');
 
                 if (typeof thead_th !== 'string') {
                     // Столбцы
-                    let columns__title = document.createElement('div');
-                    columns__title.classList.add(this._mainClass + '__columns_title');
+                    let columns__title = ce('div',this._mainClass + '__columns_title');
+
                     columns__title.appendChild(document.createTextNode(thead_th.title));
 
-                    let columns = document.createElement('div');
-                    columns.classList.add(this._mainClass + '__columns');
+                    let columns = ce('div',this._mainClass + '__columns');
 
                     thead_th.columns.forEach((title) => {
 
@@ -186,15 +181,12 @@ export default class TableFits_Create {
                             return;
                         }
 
-                        let c = document.createElement('div');
-                        c.classList.add(this._mainClass + '__columns__col');
+                        let c = ce('div',this._mainClass + '__columns__col');
 
-                        let th = document.createElement('div');
-                        th.classList.add(this._mainClass + '__th');
+                        let th = ce('div',this._mainClass + '__th');
                         th.appendChild(document.createTextNode(title));
 
-                        let td = document.createElement('div');
-                        td.classList.add(this._mainClass + '__td');
+                        let td = ce('div',this._mainClass + '__td');
                         row[i].childNodes.forEach((node) => {
                             td.appendChild(node);
                         });
@@ -216,12 +208,10 @@ export default class TableFits_Create {
                         return;
                     }
 
-                    let th = document.createElement('div');
-                    th.classList.add(this._mainClass + '__th');
+                    let th = ce('div',this._mainClass + '__th');
                     th.appendChild(document.createTextNode(thead_th));
 
-                    let td = document.createElement('div');
-                    td.classList.add(this._mainClass + '__td');
+                    let td = ce('div',this._mainClass + '__td');
 
                     row[i].childNodes.forEach((nd) => {
                         td.appendChild(nd);
