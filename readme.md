@@ -84,12 +84,12 @@ If you give the script all tables in a row, this option will be useful
 </table>
 ```
 
-#### Width of the table `data-table-width="700"`
+#### Width of the table `data-table-fits-width="700"`
 
 Sets the width of the table when it will converted into blocks.
 
 ```html
-<table id="id-table" data-table-width="700">
+<table id="id-table" data-table-fits-width="700">
 ...
 </table>
 ```
