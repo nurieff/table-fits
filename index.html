@@ -143,6 +143,7 @@ TableFits.make('#id-table');
             <pre>
 TableFits.make('#id-table',{
     mainClass: 'table-fits',
+    width: null,
     resize: true,
     watch: true
 })
@@ -163,6 +164,14 @@ TableFits.make('#id-table',{
                         </td>
                         <td>
                             Class name prefix, default: <code>"table-fits"</code> and all children has class <code>"table-fits__..."</code>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <code>width</code>
+                        </td>
+                        <td>
+                            Sets the width of the table when it will converted into blocks, default <code>null</code>
                         </td>
                     </tr>
                     <tr>
@@ -204,6 +213,33 @@ TableFits.make('#id-table',{
             <p>
                 If you give the script all tables in a row, this option will be useful
             </p>
+        </div>
+    </div>
+
+    <h3>Width of the table</h3>
+    <div class="row">
+        <div class="col-md-6">
+<pre>
+&lt;table id="id-table" data-table-fits-width="700"&gt;
+    ...
+&lt;/table&gt;
+</pre>
+        </div>
+        <div class="col-md-6">
+            <h4>
+                <code>data-table-fits-width="700"</code>
+            </h4>
+            <p>
+                Sets the width of the table when it will converted into blocks
+            </p>
+            <p>
+                Similar to the option
+            </p>
+<pre>
+TableFits.make('#id-table',{
+    width: 700
+});
+</pre>
         </div>
     </div>
 
