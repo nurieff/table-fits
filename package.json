@@ -4,12 +4,16 @@
   "description": "Responsive table",
   "main": "dist/table-fits.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "BUILD=production gulp",
     "watch": "gulp watch",
     "dev": "gulp -c"
   },
   "keywords": [
     "js",
+    "css",
+    "plugin",
+    "table-fits",
     "vanillajs",
     "table",
     "responsive",
