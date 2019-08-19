@@ -110,21 +110,21 @@ export default class TableFits {
     }
 
     _initEvent() {
-        if (this._config.resize) {
+        if (this._config.resize && typeof window !== 'undefined') {
             window.addEventListener('resize', this._initHadler, true);
         }
 
-        if (this._config.watch && this._isTableFits) {
+        if (this._config.watch && this._isTableFits && typeof window !== 'undefined') {
             DomChange.addEvent(this._el, this._reloadHadler);
         }
     }
 
     _offEvent() {
-        if (this._config.resize) {
+        if (this._config.resize && typeof window !== 'undefined') {
             window.removeEventListener('resize', this._initHadler, true);
         }
 
-        if (this._config.watch) {
+        if (this._config.watch && typeof window !== 'undefined') {
             DomChange.removeEvent(this._el, this._reloadHadler);
         }
     }
