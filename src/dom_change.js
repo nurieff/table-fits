@@ -1,5 +1,5 @@
-let MutationObserver = window.MutationObserver || window.WebKitMutationObserver,
-    eventListenerSupported = window.addEventListener;
+let MutationObserver = typeof window !== 'undefined' ? window.MutationObserver || window.WebKitMutationObserver : undefined,
+    eventListenerSupported = typeof window !== 'undefined' ? window.addEventListener : undefined;
 
 export default class TableFits_Prepare_DomChange {
 
