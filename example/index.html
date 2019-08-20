@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Table Fits</title>
-    <link rel="stylesheet" href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="../dist/table-fits.css">
     <script src="../dist/table-fits.js"></script>
     <style>
@@ -13,8 +13,12 @@
 
         .b {
             background: #fff;
-            padding: 10px;
-            margin-bottom: 30px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .table {
+            margin-bottom: 0;
         }
     </style>
 </head>
@@ -22,7 +26,7 @@
 
 <div class="container">
     <div class="b">
-        <table class="table" id="t1">
+        <table class="table table-bordered" id="t1">
             <thead>
             <tr>
                 <th>Surname</th>
@@ -41,7 +45,7 @@
                 <td>1987</td>
                 <td>Lada Granta</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                    <button class="btn btn-primary btn-sm">OK</button>
                 </td>
             </tr>
             <tr>
@@ -51,7 +55,7 @@
                 <td>1977</td>
                 <td>Lada 99</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                    <button class="btn btn-primary btn-sm">OK</button>
                 </td>
             </tr>
             <tr>
@@ -61,14 +65,14 @@
                 <td>1967</td>
                 <td>UAZ Patriot</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                    <button class="btn btn-primary btn-sm">OK</button>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="b">
-        <table class="table" id="t2">
+        <table class="table table-bordered" id="t2">
             <thead>
             <tr>
                 <th data-table-fits="title">Surname</th>
@@ -87,7 +91,7 @@
                 <td>1987</td>
                 <td>Lada Granta</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                    <button class="btn btn-primary btn-sm">OK</button>
                 </td>
             </tr>
             <tr>
@@ -97,7 +101,7 @@
                 <td>1977</td>
                 <td>Lada 99</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                    <button class="btn btn-primary btn-sm">OK</button>
                 </td>
             </tr>
             <tr>
@@ -107,14 +111,14 @@
                 <td>1967</td>
                 <td>UAZ Patriot</td>
                 <td>
-                    <button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button>
+                    <button class="btn btn-primary btn-sm">OK</button>
                 </td>
             </tr>
             </tbody>
         </table>
     </div>
     <div class="b">
-        <table class="table" id="t3">
+        <table class="table table-bordered" id="t3">
             <thead>
             <tr>
                 <th colspan="3">Full name</th>
@@ -137,7 +141,7 @@
                 <td>1987</td>
                 <td>Lada Granta</td>
                 <td>2015</td>
-                <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                <td><button class="btn btn-primary btn-sm">OK</button></td>
             </tr>
             <tr>
                 <td>Ivanov</td>
@@ -146,7 +150,7 @@
                 <td>1977</td>
                 <td>Lada 99</td>
                 <td>1997</td>
-                <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                <td><button class="btn btn-primary btn-sm">OK</button></td>
             </tr>
             <tr>
                 <td>Sidorov</td>
@@ -155,7 +159,7 @@
                 <td>1967</td>
                 <td>UAZ Patriot</td>
                 <td>2012</td>
-                <td><button class="btn btn-primary btn-sm"><i class="glyphicon glyphicon-earphone"></i></button></td>
+                <td><button class="btn btn-primary btn-sm">OK</button></td>
             </tr>
             </tbody>
         </table>
